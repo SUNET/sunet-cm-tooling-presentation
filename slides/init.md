@@ -26,7 +26,7 @@ When we at Sunet refer to _cosmos_ we mean three components
 * Puppet, the current configuration management software used within the multiverse
 <!-- pause -->
 
-#### Links
+# Links
 * [multiverse](https://github.com/SUNET/multiverse)
 * [cosmos](https://github.com/SUNET/cosmos-dpkg)
 * [puppet](https://www.puppet.com/docs/puppet/7/puppet_index.html)
@@ -161,11 +161,11 @@ Cosmos - execution
 Ways to make things happen
 
 <!-- pause -->
-### run-cosmos
+# run-cosmos
 In order to execute cosmos manually from the host you can run `run-cosmos` ideally with the flag `-v` the get more output of the command. Be ware of warnings from puppet. 
 
 <!-- pause -->
-### puppet apply
+# puppet apply
 `run-cosmos` fetches the ops repo and external puppet modules on each run which can be a bit irritating during development of manifests or other configuration. By disabling cosmos (/etc/no-automatic-cosmos) changes can be made to local files and manifests with anyone interfering. In this mode you can run `puppet apply -v /etc/puppet/manifests/cosmos-site.pp` in order to execute the puppet configuration on disk. Add `-d` for a very verbose output.
 
 The puppet modules can be edited in **_/etc/puppet/modules/_** or in **_/etc/puppet/cosmos-modules/_**. Any uncommited changes will be overwritten on next `run-cosmos`.
