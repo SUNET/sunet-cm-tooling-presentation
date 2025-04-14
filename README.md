@@ -13,4 +13,7 @@
 `presenterm slides/init.md`
 
 ### PDF
+> [!NOTE]
+> See [upstream docs](https://mfontanini.github.io/presenterm/features/pdf-export.html#pdf-page-size) regarding page size
+
 `presenterm slides/init.md --theme sunet-export`
