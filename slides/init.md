@@ -2,16 +2,9 @@
 title: Multiverse, cosmos and puppet @Sunet
 author: jocar
 theme:
-  name: light
-  override:
-    footer:
-      style: template
-      # Let's keep this "left" until
-      # https://github.com/mfontanini/presenterm/issues/549
-      # is fixed
-      left:
-        image: ../assets/Sunet_logo.png
-      height: 5
+  # Theme can be get here:
+  # https://github.com/SUNET/presenterm-sunet-theme
+  name: sunet
 ---
 Overview
 ---
