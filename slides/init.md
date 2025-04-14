@@ -76,12 +76,10 @@ The default overlay for a given host (created by `./addhost`). In here we store 
 <!-- end_slide -->
 Multiverse - configuration
 --- 
-# Multiverse configuration files
-
-## cosmos.conf (in repo)
+# cosmos.conf (in repo)
 Used by `./addhost` to configure the default repo url (git) and which tag pattern cosmos should use.
 <!-- pause -->
-## global/overlay/etc/puppet/setup_cosmos_modules (most often available)
+# global/overlay/etc/puppet/setup_cosmos_modules (most often available)
 Python script executed by cosmos on the host to determine which puppet modules and corresponding tag the host should use. Very useful to configure a feature branch on a set of hosts or just a single host. E.g
 ```python
 if "monitor-2.test" in host_info["fqdn"]:
@@ -91,7 +89,7 @@ if "bankid" in host_info["fqdn"]:
   modules["sunet"]["tag"] = "jocar-feature-xyx-2*"
 ```
 <!-- pause -->
-## global/overlay/etc/puppet/cosmos-rules.yaml (symlinked to cosmos-rules.yaml)
+# global/overlay/etc/puppet/cosmos-rules.yaml (symlinked to cosmos-rules.yaml)
 Yaml file to configure which puppet class(es) to apply the hosts within a given ops repo. Parsed by `re.match()` with the host's fqdn to match against.
 
 E.g
