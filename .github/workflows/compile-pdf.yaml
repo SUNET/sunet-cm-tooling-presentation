@@ -29,3 +29,7 @@ jobs:
               columns: 80
           EOL
       - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf -c /tmp/config.yaml --theme sunet-export slides/init.md
+      - uses: actions/upload-artifact@v2
+        with:
+          name: 'slides/init.pdf'
+          path: 'sunet-cm-tooling.pdf'
