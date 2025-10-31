@@ -28,4 +28,4 @@ jobs:
               rows: 30
               columns: 80
           EOL
-      - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf -c /tmp/config.yaml slides/init.md
+      - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf -c /tmp/config.yaml --theme sunet-export slides/init.md
