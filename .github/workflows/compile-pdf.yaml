@@ -21,4 +21,11 @@ jobs:
           path: presenterm-sunet-theme
       - run: mkdir -p /home/runner/.config/presenterm
       - run: cp -vr presenterm-sunet-theme/* /home/runner/.config/presenterm/
-      - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf slides/init.md
+      - run: |
+          cat >/tmp/config.yaml <<EOL
+          export:
+            dimensions:
+              rows: 30
+              columns: 80
+          EOL
+      - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf -c /tmp/config.yaml slides/init.md
