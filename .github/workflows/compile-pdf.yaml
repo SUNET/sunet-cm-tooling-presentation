@@ -9,13 +9,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Checkout tools repo
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
       - run: cargo install --locked --git https://github.com/mfontanini/presenterm
       - name: Install uv
         uses: astral-sh/setup-uv@v6
-      - name: Checkout tools repo
       - run: mkdir -p /home/runner/.config
       - uses: actions/checkout@v5
         with:
