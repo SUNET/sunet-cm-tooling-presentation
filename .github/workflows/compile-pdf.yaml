@@ -1,0 +1,15 @@
+name: Compile PDF
+
+on: [push, pull_request]
+
+jobs:
+
+  compile-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo binstall presenterm
