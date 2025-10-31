@@ -9,7 +9,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Checkout tools repo
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
