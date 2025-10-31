@@ -20,5 +20,5 @@ jobs:
           repository: SUNET/presenterm-sunet-theme
           path: presenterm-sunet-theme
       - run: mkdir -p /home/runner/.config/presenterm
-      - run: cp -r presenterm-sunet-theme/* /home/runner/.config/presenterm/
+      - run: cp -vr presenterm-sunet-theme/* /home/runner/.config/presenterm/
       - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf slides/init.md
