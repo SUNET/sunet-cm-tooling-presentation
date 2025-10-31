@@ -19,6 +19,6 @@ jobs:
       - run: mkdir -p /home/runner/.config
       - uses: actions/checkout@v5
         with:
-        repository: SUNET/presenterm-sunet-theme
-        path: /home/runner/.config/presenterm
+          repository: SUNET/presenterm-sunet-theme
+          path: /home/runner/.config/presenterm
       - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf slides/init.md
