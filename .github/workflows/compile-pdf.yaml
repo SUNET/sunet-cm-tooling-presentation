@@ -25,8 +25,8 @@ jobs:
           cat >/tmp/config.yaml <<EOL
           export:
             dimensions:
-              rows: 30
-              columns: 80
+              rows: 40
+              columns: 150
           EOL
       - run: uv run --with weasyprint /home/runner/.cargo/bin/presenterm --export-pdf -c /tmp/config.yaml --theme sunet-export slides/init.md
       - uses: actions/upload-artifact@v4
