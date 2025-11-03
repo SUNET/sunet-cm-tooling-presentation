@@ -13,7 +13,10 @@
 `presenterm slides/init.md`
 
 ### PDF
+
+Download the [latest release](https://github.com/SUNET/sunet-cm-tooling-presentation/releases) or build it yourself.
+
 > [!NOTE]
 > See [upstream docs](https://mfontanini.github.io/presenterm/features/pdf-export.html#pdf-page-size) regarding page size
 
-`presenterm slides/init.md --theme sunet-export`
+`presenterm slides/init.md --theme sunet-export -o slides/sunet-cm-tooling-presentation.pdf`
