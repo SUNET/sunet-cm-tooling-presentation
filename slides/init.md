@@ -247,7 +247,7 @@ Documentation in the [wiki](https://wiki.sunet.se/display/sunetops/SUNET+CA).
 <!-- pause -->
 
 ## ACME C
-Mostly used with the puppet class [sunet::dehydrated::client](https://github.com/SUNET/puppet-sunet/blob/main/manifests/dehydrated/client.pp). HTTP Challanges are initiated and proxied to from the central acme c host (acme-c.sunet.se). Each service using AMCE C must be publicly available in order for the verification to work. Besides adding a new domain to DNS, configuration is needed in the acme-c server (via nunoc-ops) to getting started with a new domain.
+Mostly used with the puppet class [sunet::dehydrated::client](https://github.com/SUNET/puppet-sunet/blob/main/manifests/dehydrated/client.pp). HTTP Challanges are initiated and proxied to from the central acme c host (acme-c.sunet.se). Each service using AMCE C must be publicly available in order for the verification to work. Besides adding a new domain to DNS, configuration is needed in the acme-c server (via nunoc-ops) to getting started with a new domain. Most of the services use the docker container [always-https](https://github.com/SUNET/docker-always-https) the proxy the HTTP (port 80) challanges from Let's Encrypt to the ACME C server.
 
 Read more about it in the [wiki](https://wiki.sunet.se/display/sunetops/Acme-c+technical+documentation)
 
