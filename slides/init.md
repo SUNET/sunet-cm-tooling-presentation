@@ -230,6 +230,36 @@ Host specific secrets. The file is handled from the ops repo with the `./edit-se
 <!-- end_slide -->
 
 
+TLS
+---
+TLS at Sunet can be done in multiple ways. Some may services are placed behind a load balancer (which handles the public TLS termintion) while others exposes port 443 (or other) directly to the world.
+
+<!-- pause -->
+
+## Infra cert
+Our internal CA. Mostly used between server and loadbalancer to secure the trafic but also used for machine to machine authenication. E.g Redis/Redict.
+
+CSRs are created in nunoc-ops with `scripts/mkreq` and signed certs can be found here: [http://ca.sunet.se/infra/](http://ca.sunet.se/infra/). [sunet::ici_ca::rp](https://github.com/SUNET/puppet-sunet/blob/main/manifests/ici_ca.pp) is a great companion when working with Infra certs.
+
+Documentation in the [wiki](https://wiki.sunet.se/display/sunetops/SUNET+CA).
+
+
+<!-- pause -->
+
+## ACME C
+Mostly used with the puppet class [sunet::dehydrated::client](https://github.com/SUNET/puppet-sunet/blob/main/manifests/dehydrated/client.pp). HTTP Challanges are initiated and proxied to from the central acme c host (acme-c.sunet.se). Each service using AMCE C must be publicly available in order for the verification to work. Besides adding a new domain to DNS, configuration is needed in the acme-c server (via nunoc-ops) to getting started with a new domain.
+
+Read more about it in the [wiki](https://wiki.sunet.se/display/sunetops/Acme-c+technical+documentation)
+
+<!-- pause -->
+
+## ACME D
+ACME Challanges thought DNS so the service don't need to be publicly available. The puppet class [sunet::certbot::acmed](https://wiki.sunet.se/display/sunetops/sunet%3A%3Acertbot%3A%3Aacmed) is recommended in order the get certificates with ACME D. AMCE D requires a special DNS entry and configuration in the local ops repo in order to get started with a new domain.
+
+Read more about it in the [wiki](https://wiki.sunet.se/display/sunetops/acme-d.sunet.se)
+
+<!-- end_slide -->
+
 bonuses
 ---
 
