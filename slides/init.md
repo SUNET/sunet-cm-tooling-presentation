@@ -115,6 +115,8 @@ Each ops repo has it's own trust store. The keys are stored in **_global/overlay
 
 Besides trusting the current ops repo the trusted keys are used to validate incoming external puppet modules.
 
+When running `./bumptag` the clients local trust is in used (`gpg --list-keys`) so you might need to import and trust keys locally in order to bump.
+
 ¹ The GPG key *MUST* be stored on a Yubikey created according to [token-setup.md](https://github.com/SUNET/eduid-docs/blob/master/token-setup.mkd)
 
 <!-- end_slide -->
